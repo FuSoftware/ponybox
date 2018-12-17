@@ -1,0 +1,19 @@
+<div class="ponybox-toolbar">
+    <div class="left" margin-left>
+        <button ion-button icon-start (click)="showChannelsList()" [ngClass]="{'new-message': showNewMessage}">
+            <ion-icon name="menu"></ion-icon>
+            Channels
+        </button>
+    </div>
+    <div class="right" margin-right>
+        <button ion-button icon-only (click)="showUsersList()">
+            <ion-icon name="people"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="showHelp()">
+            <ion-icon name="help"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="logout()" class="logout-button">
+            <ion-icon name="power"></ion-icon>
+        </button>
+    </div>
+</div>

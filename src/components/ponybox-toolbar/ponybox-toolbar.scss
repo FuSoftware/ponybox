@@ -1,0 +1,31 @@
+ponybox-toolbar {
+    .ponybox-toolbar {
+        height: 60px;
+        border-bottom: 1px solid #333;
+        background-color: rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        
+        button {
+            border-radius: 5px;
+            
+            &.new-message {
+                background-color: #ffa026b3 !important;
+                &:hover {
+                    background-color: #ffa026b3;
+                }
+            }
+            
+            &.logout-button {
+                background-color: #a14a4a;
+            }
+        }
+        
+        .right {
+            button {
+                width: 40px;
+            }
+        }
+    }
+}

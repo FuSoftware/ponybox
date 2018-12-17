@@ -1,0 +1,30 @@
+page-help {
+    ion-navbar {
+        ion-title {
+            height: 43px;
+        }
+        button {
+            float: right;
+            color: white !important;
+        }
+    }
+    
+    ion-content {
+        h2 {
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li {
+                margin: 5px 0;
+                padding: 5px 0;
+                font-size: 14px;
+                &:not(:last-child) {
+                    border-bottom: 1px dotted #777;
+                }
+            }
+        }
+    }
+}

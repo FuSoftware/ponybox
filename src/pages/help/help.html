@@ -1,0 +1,35 @@
+<!--
+  Generated template for the HelpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <button ion-button clear (click)="dismiss()">
+            Fermer
+        </button>
+        <ion-title>Ponybox - Help</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <h2>Commandes disponibles</h2>
+    <ul>
+        <li>/me &lt;message&gt; : <span style="font-style : italic">Parler sous forme d'emote</span></li>
+        <li>/hug &lt;utilisateur&gt; : <span style="font-style : italic">Fait un câlin à &lt;utilisateur&gt;</span></li>
+        <li>/ragequit ( &lt;raison&gt; ) : <span style="font-style : italic">Quitte rageusement la CB, possibilité de donné une raison</span></li>
+        <li>/rand  : <span style="font-style : italic">Génère un nombre aleatoire entre 1 et 100</span></li>
+        <li>/rand &lt;max&gt; : <span style="font-style : italic">Génère un nombre aléatoire entre 1 et &lt;max&gt;</span></li>
+        <li>/rand &lt;min&gt; &lt;max&gt; : <span style="font-style : italic">Génère un nombre aléatoire entre &lt;min&gt; et &lt;max&gt;</span></li>
+    </ul>
+    <div *ngIf="showModeratorHelp()">
+        <h2>Commandes des modérateurs</h2>
+        <ul>
+            <li>/sweetie &lt;message&gt; : <span style="font-style : italic">Fais dire à sweetie le &lt;message&gt;</span></li>
+            <li>/sweetieme &lt;message&gt; : <span style="font-style : italic">Fais faire l'emote &lt;message&gt; à Sweetie</span></li>
+            <li>/time : <span style="font-style : italic">Fais dire l'heure à Sweetie</span></li>
+        </ul>
+    </div>
+</ion-content>

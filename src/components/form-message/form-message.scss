@@ -1,0 +1,119 @@
+form-message-component {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 85px;
+    max-height: 85px;
+    border-top: 1px solid #333;
+    position: absolute;
+    
+    .smiley-container {
+        height: 200px;
+        width: 100%;
+        box-shadow: 0 0 5px black;
+        position: absolute;
+        bottom: 85px;
+        z-index: 500;
+        background-color: color($themes, night, background);
+        
+        .hide {
+            display: none;
+        }
+        
+        .smiley-category {
+            .header-smiley-category {
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #999;
+
+                & > div {
+                    filter: grayscale(100%);
+                    height: 43px;
+                    line-height: 43px;
+                    
+                    &.active {
+                        filter: grayscale(0%);
+                        background-color: rgba(255, 255, 255, 0.2);
+                        border-radius: 5px;
+                    }
+                    img {
+                        vertical-align: middle;
+                        padding: 1px;
+                        max-height: 40px;
+                        min-width: 20px;
+                    }
+                }
+            }
+            
+            .content-smiley-category {
+                height: calc(200px - 43px);
+                text-align: center;
+                
+                .smiley {
+                    display: inline-block;
+                    padding: 3px;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+    
+    form {
+        padding: 0 10px;
+
+        .to-input {
+            display: flex;
+            align-items:center;
+            justify-content: left;
+            margin: 4px 0;
+
+            .is-lock {
+                background-color: #a14a4a !important;
+            }
+            .is-unlock {
+                background-color: #4b8048 !important;
+            }
+            .hold {
+                box-shadow: 0 0 15px black inset;
+            }
+            button {
+                height: 30px;
+                border-radius: 5px;
+                margin-right: 5px;
+            }
+        }
+
+        .message-input {
+            position: relative;
+
+            ion-input {
+                padding-right: 30px;
+            }
+
+            button {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                height: 30px;
+                margin: 0;
+                background-color: transparent !important;
+                color: white;
+            }
+        }
+
+        ion-input {
+            border-radius: 5px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+
+            &.is-private {
+                background-color: #805d63 !important;
+            }
+
+            input {
+                margin: 7px 5px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,3 @@
+<ion-content class="channel-container" (ionScroll)="onScroll($event)">
+    <message-component *ngFor="let m of channel.messages" [message]="m"></message-component>
+</ion-content>

@@ -1,0 +1,78 @@
+.block-container {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    
+    ion-input {
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 2px 5px;
+        input {
+            margin: 5px;
+        }
+    }
+}
+
+.night-theme {
+    .bar-button {
+        color: white !important;
+    }
+    .toolbar-background {
+        background-color: color($themes, night, primary);
+    }
+
+    .toolbar-title, p {
+        color: color($themes, night, text);
+    }
+    
+    .content {
+        background-color: color($themes, night, background);
+        color : color($themes, night, text);
+        
+        a {
+            color : color($themes, night, link);
+        }
+        
+        ion-input {
+            background-color: rgba(0, 0, 0, 0.2);
+            input::placeholder {
+                color: white;
+            }
+        }
+        
+        button {
+            background-color : color($themes, night, button-color);
+            &:hover {
+                background-color : color($themes, night, button-hover);
+            }
+        }
+    }
+    
+    .alert-input  {
+        color: white !important;
+    }
+}
+
+.alert-wrapper {
+    background-color: color($themes, night, background) !important;
+    color: color($themes, night, text) !important;
+    .alert-head {
+        text-align: center !important;
+    }
+    .alert-button {
+        color: color($themes, night, text) !important;
+        background-color: color($themes, night, button-color);
+    }
+    
+    .alert-message {
+        color: #CCCCCC;
+    }
+}
+
+.loading-wrapper {
+    background-color: color($themes, night, background) !important;
+    
+    .loading-content {
+        color: color($themes, night, text) !important;
+    }
+}

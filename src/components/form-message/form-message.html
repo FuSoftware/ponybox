@@ -1,0 +1,30 @@
+<div class="smiley-container" [ngClass]="{'hide' : showSmileys === false}">
+    <div class="smiley-category">
+        <div class="header-smiley-category">
+            <div *ngFor="let c of ponyboxService.ponybox.smileys" [ngClass]="{'active' : activeCategory !== null && activeCategory.name === c.name}" (click)="changeCategory(c)">
+                <img src="{{ config.get('apiUrl') }}/css/images/smileys/{{ c.name }}.png" [alt]="c.label" />
+            </div>
+        </div>
+        <ion-scroll class="content-smiley-category" scrollY="true">
+            <div *ngFor="let s of getSmilies()" class="smiley" (click)="clickSmiley(s)">
+                <img [src]="s.url" [alt]="s.text" />
+            </div>
+        </ion-scroll>
+    </div>
+</div>
+<form [formGroup]="messageGroup" (ngSubmit)="submit()">
+    <div class="to-input">
+        <button type="button" (click)="clickSmileys()" ion-button icon-only class="smiley-button" [ngClass]="{'hold' : showSmileys === true}"><ion-icon name="happy"></ion-icon></button>
+        <button type="button" (click)="clickLock()" ion-button icon-only [ngClass]="{'is-lock': destLocked === true, 'is-unlock' : destLocked === false}">
+            <ion-icon name="lock" *ngIf="destLocked === true"></ion-icon>
+            <ion-icon name="unlock" *ngIf="destLocked === false"></ion-icon>
+        </button>
+        <ion-input type="text" formControlName="to" maxlength="100" placeholder="Destinataire"></ion-input>
+    </div>
+    <div class="message-input">
+        <ion-input type="text" formControlName="message" maxlength="5000" placeholder="Message" [ngClass]="{'is-private': messageGroup.value.to.length !== 0}"></ion-input>
+        <button ion-button icon-only clear  (click)="submit()">
+            <ion-icon name="send"></ion-icon>
+        </button>
+    </div>
+</form>

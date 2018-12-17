@@ -1,0 +1,7 @@
+page-ponybox {
+    max-height:100%;
+    
+    .empty-channel {
+        height: calc(100% - 60px - 85px);
+    }
+}

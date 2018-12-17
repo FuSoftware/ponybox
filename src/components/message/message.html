@@ -1,0 +1,24 @@
+<div class="message-container" [ngClass]="{'emote': message.emote, 'private' : message.isPrivate()}">
+    <div class="message-author-avatar" *ngIf="getShowedSender() !== null" (click)="clickUser()">
+        <img src="https://frenchy-ponies.fr/download/file.php?avatar={{ getShowedSender().avatar }}" />
+    </div>
+    <div class="message-content">
+        <div class="message-header">
+            <div class="message-author-username" (click)="clickUser()">
+                <span class="author-username" [style.color]="message.sender.color">{{ message.sender.username }}</span>
+                <span *ngIf="message.to !== null"> à </span>
+                <span class="author-username" *ngIf="message.to !== null" [style.color]="message.to.color">{{ message.to.username }}</span>
+            </div>
+            <div class="message-information">
+                <div class="date-message">{{ getMessageDateFormat() }}</div>
+            </div>
+        </div>
+        <div>
+            <button ion-button icon-only class="edit-message" *ngIf="message.rights.edit" (click)="editMessage()">
+                <ion-icon name="md-create" ></ion-icon>
+            </button>
+            <div class="message-content-message" [innerHTML]="message.content"></div>
+        </div>
+    </div>
+</div>
+

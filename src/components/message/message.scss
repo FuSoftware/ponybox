@@ -1,0 +1,112 @@
+message-component {
+    &:nth-child(2n) {
+        .message-container {
+            background-color: rgba(255, 255, 255, 0.07);
+            &.private {
+                background-color: #8d7373;;
+            }
+        }
+    }
+    .message-container {
+        padding: 10px 5px;
+        display: flex;
+        .message-author-avatar {
+            width: 50px;
+            max-height: 50px;
+            text-align: center;
+            margin: 3px 6px;
+            padding: 3px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            flex-direction:row;
+            align-items:center;
+            justify-content: center;
+            img {
+                max-width: 40px;
+                max-height: 40px;
+                border-radius: 25%;
+            }
+        }
+        &.emote {
+            .message-content {
+                .message-content-message {
+                    font-style: italic;
+                    color: #BBB;
+                }
+            }
+        }
+        &.private {
+            background-color: #B38686;
+        }
+        .message-content {
+            width: calc(100% - 60px);
+            .message-header {
+                display: flex;
+                justify-content: space-between;
+
+                .message-author-username {
+                    display: inline-block;
+                    .author-username {
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+                }
+                .message-information {
+                    display: inline-block;
+                    text-align: right;
+                    
+                    .date-message {
+                        color: rgba(255, 255, 255, 0.7);
+                        font-style: italic;
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .edit-message {
+                font-size: 16px;
+                padding: 3px 5px;
+                border-radius: 5px;
+                float: right;
+                margin-right: 5px;
+                margin-top: 2px;
+                clear: both;
+                display: inline-block;
+                width: 35px;
+            }
+            .message-content-message {
+                padding: 3px 5px;
+                
+                .message-image {
+                    max-height: 300px;
+                    vertical-align: middle;
+                }
+                
+                .message-link-video {
+                    display: inline-block;
+                    vertical-align: middle;
+                    
+                    
+                    &:hover {
+                        opacity: 1;
+                    }
+                    
+                    img {
+                        padding: 2px;
+                        border: 1px solid #900;
+                        width: 120px;
+                        display: none;
+                    }
+                    
+                    .video-in-message {
+                        display: block !important;
+                        
+                        iframe {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
