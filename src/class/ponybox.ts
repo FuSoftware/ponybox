@@ -1,12 +1,14 @@
 import { Channel } from './channel';
 import { SmileyCategory } from './smiley-category';
 import { Smiley } from './smiley';
+import { BlockList } from './blocklist';
 
 export class Ponybox {
     currentChannel : Channel = null;
     openChannels : Array<Channel> = [];
     allChannels : {[key:string] : Array<Channel>} = {};
     smileys: Array<SmileyCategory> = [];
+    blocklist: BlockList = new BlockList();
     
     constructor() {
 
