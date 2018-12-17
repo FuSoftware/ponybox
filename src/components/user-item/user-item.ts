@@ -18,6 +18,7 @@ export class UserItemComponent {
   constructor(
     private storage: Storage,
   ) {
+
   }
 
   blockUser(){
@@ -33,7 +34,7 @@ export class UserItemComponent {
           'blocked',
           val
       );
-  });
+    });
   }
 
 }

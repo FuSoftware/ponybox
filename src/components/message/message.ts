@@ -9,6 +9,8 @@ import { ServerInterface } from '../../services/server-interface';
 import { PonyboxService } from '../../services/ponybox';
 import { ObserverService } from '../../services/observer';
 
+import { Storage } from '@ionic/storage';
+
 /**
  * Generated class for the MessageComponent component.
  *
@@ -29,7 +31,8 @@ export class MessageComponent {
         private alertCtrl : AlertController,
         private serverInterface : ServerInterface,
         private ponyboxService : PonyboxService,
-        private observerService : ObserverService
+        private observerService : ObserverService,
+        private storage: Storage,
     ) {
     
     }
@@ -94,6 +97,23 @@ export class MessageComponent {
         let user = this.getShowedSender();
         this.observerService.emit('click-user', user);
     }
+
+    blockUser(){
+        let user = this.getShowedSender();
+        user.toggleBlock();
+    
+        this.storage.get('blocked').then((val) => {
+          if (val === null) {
+              val = {};
+          }
+          val[user.id] = user.blocked;
+    
+          this.storage.set(
+              'blocked',
+              val
+          );
+        });
+      }
     
     confirmEditMessage(newMessage: string) {
         if (newMessage.length === 0) return;

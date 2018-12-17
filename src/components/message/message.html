@@ -6,6 +6,10 @@
         <div class="message-header">
             <div class="message-author-username" (click)="clickUser()">
                 <span class="author-username" [style.color]="message.sender.color">{{ message.sender.username }}</span>
+                <button class="user-blocked" (click)="blockUser()">
+                    <span *ngIf="message.sender.blocked"> Débloquer </span>
+                    <span *ngIf="!message.sender.blocked"> Bloquer </span>
+                </button>
                 <span *ngIf="message.to !== null"> à </span>
                 <span class="author-username" *ngIf="message.to !== null" [style.color]="message.to.color">{{ message.to.username }}</span>
             </div>
