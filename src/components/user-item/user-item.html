@@ -1,0 +1,13 @@
+<!-- Generated template for the UserItemComponent component -->
+<div class="user-item">
+	<div class="user-avatar">
+    	<img src="https://frenchy-ponies.fr/download/file.php?avatar={{ user.avatar }}">
+    </div>
+    <span class="user-username" [style.color]="u.color">
+    	{{ user.username }}
+	</span>
+	<button class="user-blocked" (click)="blockUser()">
+		<span *ngIf="user.blocked"> Débloquer </span>
+		<span *ngIf="!user.blocked"> Bloquer </span>
+	</button>
+</div>

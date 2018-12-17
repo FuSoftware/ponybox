@@ -16,12 +16,7 @@
         <h3>Admin</h3>
         <ul>
             <li *ngFor="let u of admins">
-                <div class="user-avatar">
-                    <img src="https://frenchy-ponies.fr/download/file.php?avatar={{ u.avatar }}">
-                </div>
-                <span class="user-username" [style.color]="u.color">
-                    {{ u.username }}
-                </span>
+                <user-item [user]="u"></user-item>
             </li>
         </ul>
     </div>
@@ -29,12 +24,7 @@
         <h3>Modérateur</h3>
         <ul>
             <li *ngFor="let u of moderators">
-                <div class="user-avatar">
-                    <img src="https://frenchy-ponies.fr/download/file.php?avatar={{ u.avatar }}">
-                </div>
-                <span class="user-username" [style.color]="u.color">
-                    {{ u.username }}
-                </span>
+                <user-item [user]="u"></user-item>
             </li>
         </ul>
     </div>
@@ -42,12 +32,7 @@
         <h3>Membre</h3>
         <ul>
             <li *ngFor="let u of users">
-                <div class="user-avatar">
-                    <img src="https://frenchy-ponies.fr/download/file.php?avatar={{ u.avatar }}">
-                </div>
-                <span class="user-username" [style.color]="u.color">
-                    {{ u.username }}
-                </span>
+                <user-item [user]="u"></user-item>
             </li>
         </ul>
     </div>
@@ -55,12 +40,7 @@
         <h3>Inactif</h3>
         <ul>
             <li *ngFor="let u of inactives">
-                <div class="user-avatar">
-                    <img src="https://frenchy-ponies.fr/download/file.php?avatar={{ u.avatar }}">
-                </div>
-                <span class="user-username inactive">
-                    {{ u.username }}
-                </span>
+                <user-item [user]="u"></user-item>
             </li>
         </ul>
     </div>
