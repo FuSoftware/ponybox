@@ -11,7 +11,7 @@ export class Config {
     
     public getEnv() {
         if (isDevMode()) {
-            return 'dev';
+            return 'prod';
         } else {
             return 'prod';
         }

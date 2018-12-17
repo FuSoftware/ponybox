@@ -8,7 +8,7 @@ export class User {
         public id: number,
         public username: string = null,
         public color: string = null,
-        public avatar: string = null
+        public avatar: string = null,
     ) {
         this.blocked = false;
     }
@@ -19,5 +19,9 @@ export class User {
         this.avatar = data.avatar;
         this.rights = new RightsOption(data.rights);
         this.blocked = false;
+    }
+
+    public toggleBlock(){
+        this.blocked = !this.blocked;
     }
 }

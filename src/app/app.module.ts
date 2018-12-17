@@ -19,6 +19,7 @@ import { FormMessageComponent } from '../components/form-message/form-message';
 import { MessageComponent } from '../components/message/message';
 import { ChannelComponent } from '../components/channel/channel';
 import { PonyboxToolbarComponent } from '../components/ponybox-toolbar/ponybox-toolbar';
+import { UserItemComponent } from '../components/user-item/user-item';
 
 import { ApiProvider } from '../providers/api';
 
@@ -52,6 +53,7 @@ const socketIoConfig: SocketIoConfig = { url: urlServer, options: {} };
     MessageComponent,
     ChannelComponent,
     PonyboxToolbarComponent,
+    UserItemComponent,
   
     LoginPage,
     PonyboxPage,

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { User } from '../../class/user';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the UserItemComponent component.
@@ -14,11 +15,25 @@ import { User } from '../../class/user';
 export class UserItemComponent {
   @Input() user: User;
 
-  constructor() {
+  constructor(
+    private storage: Storage,
+  ) {
   }
 
   blockUser(){
-    this.user.blocked = !this.user.blocked;
+    this.user.toggleBlock();
+
+    this.storage.get('blocked').then((val) => {
+      if (val === null) {
+          val = {};
+      }
+      val[this.user.id] = this.user.blocked;
+
+      this.storage.set(
+          'blocked',
+          val
+      );
+  });
   }
 
 }

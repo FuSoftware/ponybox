@@ -24,6 +24,10 @@ export class Channel {
     close() {
         this.active = false;
     }
+
+    visibleMessages(){
+        return this.messages.filter(m=>!m.sender.blocked);
+    }
     
     addMessage(message: Message, prepend: boolean = false) {
         if (prepend) {
